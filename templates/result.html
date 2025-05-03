@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissor</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: #89AAE6; color: white;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 mb-3 mt-5">
+                <h1>Here the results !</h1>
+             </div>
+
+            <div class="col-sm-12 mb-3">
+                <li> You chose {{ pick_id }} </li>
+                <li> Computer chose {{ random_choice }} </li>
+            </div>
+
+            <div class="col-sm-12 mb-2">
+        {% if pick_id == random_choice %}
+             <p>It's a draw!</p>
+            </div>
+
+        {% elif (pick_id == "Rock" and random_choice == "Scissor") or
+                (pick_id == "Paper" and random_choice == "Rock") or
+                (pick_id == "Scissor" and random_choice == "Paper") %}
+            <p>You win! 🎉</p>
+
+        {% else %}
+            <div class="col-sm-12 mb-2">
+                <p>You lose! 😢</p>
+        {% endif %}
+        <a href="{{ url_for('home') }}">Try again</a>
+        </div>
+    </div>
+</body>
+</html>
