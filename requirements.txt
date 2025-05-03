@@ -1,7 +1,7 @@
 flask
 gunicorn
-aaiohttp==3.9.5
-aiohttp-retry==2.8.3
+aaiohttp
+aiohttp
 aiosignal==1.3.1
 albucore==0.0.13
 albumentations==1.4.10
